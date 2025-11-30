@@ -1,0 +1,440 @@
+---
+import { siteConfig } from "../config";
+---
+
+<div
+  id="hero"
+  class="relative isolate overflow-hidden bg-white py-24 md:h-screen"
+  style={`--accent-color: ${siteConfig.accentColor}`}
+>
+  <!-- Gradient overlay -->
+  <div
+    class="absolute inset-0 -z-10"
+    style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}40 0%, ${siteConfig.accentColor}25 20%, ${siteConfig.accentColor}10 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, white 100%)`}
+  >
+  </div>
+  <svg
+    aria-hidden="true"
+    class="absolute inset-0 -z-10 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+  >
+    <defs>
+      <pattern
+        x="50%"
+        y={-1}
+        id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
+        width={200}
+        height={200}
+        patternUnits="userSpaceOnUse"
+      >
+        <path d="M.5 200V.5H200" fill="none"></path>
+      </pattern>
+      <pattern
+        id="programming-symbols"
+        x="0"
+        y="0"
+        width="400"
+        height="400"
+        patternUnits="userSpaceOnUse"
+      >
+        <text
+          x="50"
+          y="50"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="24"
+          transform="rotate(-15)">&lt;/&gt;</text
+        >
+        <text
+          x="150"
+          y="100"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="20"
+          transform="rotate(10)">{}</text
+        >
+        <text
+          x="250"
+          y="80"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="18"
+          transform="rotate(-5)">=&gt;</text
+        >
+        <text
+          x="100"
+          y="200"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="22"
+          transform="rotate(15)">[]</text
+        >
+        <text
+          x="300"
+          y="180"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="20"
+          transform="rotate(-10)">&lt;&gt;</text
+        >
+        <text
+          x="200"
+          y="250"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="24"
+          transform="rotate(5)">()</text
+        >
+        <text
+          x="50"
+          y="320"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="18"
+          transform="rotate(-8)">::</text
+        >
+        <text
+          x="350"
+          y="300"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="22"
+          transform="rotate(12)">==</text
+        >
+        <text
+          x="150"
+          y="350"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="20"
+          transform="rotate(-15)">++</text
+        >
+        <text
+          x="250"
+          y="370"
+          fill={siteConfig.accentColor}
+          font-family="monospace"
+          font-size="24"
+          transform="rotate(8)">;</text
+        >
+      </pattern>
+    </defs>
+    <rect
+      fill="url(#programming-symbols)"
+      width="100%"
+      height="100%"
+      opacity="0.2"></rect>
+    <rect
+      fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"
+      width="100%"
+      height="100%"
+      stroke-width={0}></rect>
+  </svg>
+  <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
+    <div class="w-full">
+      <h2
+        class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 animate-fade-in"
+      >
+        Hello! 👋
+      </h2>
+      <h1
+        class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200"
+      >
+        I'm <span style={{ color: siteConfig.accentColor }}
+          >{siteConfig.name}</span
+        >
+      </h1>
+      <p
+        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400"
+      >
+        {siteConfig.title}
+      </p>
+
+      <!-- Skills Section -->
+      <div class="mt-8 sm:mt-10 md:mt-12 animate-fade-in animation-delay-600">
+        <p class="text-sm sm:text-base font-medium text-gray-500 mb-4 text-left">
+          My skills include
+        </p>
+        <div class="overflow-hidden">
+        <div class="tech-scroll">
+          <div class="tech-scroll-content">
+            <!-- Languages -->
+            <div class="tech-item"><iconify-icon icon="logos:python"></iconify-icon><span>Python</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:javascript"></iconify-icon><span>JavaScript</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:typescript-icon"></iconify-icon><span>TypeScript</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:java"></iconify-icon><span>Java</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:c-plusplus"></iconify-icon><span>C++</span></div>
+            <div class="tech-item"><iconify-icon icon="devicon:csharp"></iconify-icon><span>C#</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:r-lang"></iconify-icon><span>R</span></div>
+
+            <!-- Frameworks -->
+            <div class="tech-item"><iconify-icon icon="logos:react"></iconify-icon><span>React</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:nodejs-icon"></iconify-icon><span>Node.js</span></div>
+            <div class="tech-item"><iconify-icon icon="simple-icons:fastapi" style="color: #009688"></iconify-icon><span>FastAPI</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:flask"></iconify-icon><span>Flask</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:angular-icon"></iconify-icon><span>Angular</span></div>
+
+            <!-- AI/ML -->
+            <div class="tech-item"><iconify-icon icon="logos:tensorflow"></iconify-icon><span>TensorFlow</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:pytorch-icon"></iconify-icon><span>PyTorch</span></div>
+            <div class="tech-item"><iconify-icon icon="devicon:pandas"></iconify-icon><span>Pandas</span></div>
+            <div class="tech-item"><iconify-icon icon="devicon:numpy"></iconify-icon><span>NumPy</span></div>
+            <div class="tech-item"><iconify-icon icon="devicon:scikitlearn"></iconify-icon><span>Scikit-learn</span></div>
+
+            <!-- Cloud -->
+            <div class="tech-item"><iconify-icon icon="logos:aws"></iconify-icon><span>AWS</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:azure-icon"></iconify-icon><span>Azure</span></div>
+            <div class="tech-item"><iconify-icon icon="simple-icons:snowflake" style="color: #29B5E8"></iconify-icon><span>Snowflake</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:docker-icon"></iconify-icon><span>Docker</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:kubernetes"></iconify-icon><span>Kubernetes</span></div>
+
+            <!-- Databases & Tools -->
+            <div class="tech-item"><iconify-icon icon="logos:postgresql"></iconify-icon><span>PostgreSQL</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:mysql"></iconify-icon><span>MySQL</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:git-icon"></iconify-icon><span>Git</span></div>
+
+            <!-- Duplicate for seamless loop -->
+            <div class="tech-item"><iconify-icon icon="logos:python"></iconify-icon><span>Python</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:javascript"></iconify-icon><span>JavaScript</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:typescript-icon"></iconify-icon><span>TypeScript</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:java"></iconify-icon><span>Java</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:c-plusplus"></iconify-icon><span>C++</span></div>
+            <div class="tech-item"><iconify-icon icon="devicon:csharp"></iconify-icon><span>C#</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:r-lang"></iconify-icon><span>R</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:react"></iconify-icon><span>React</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:nodejs-icon"></iconify-icon><span>Node.js</span></div>
+            <div class="tech-item"><iconify-icon icon="simple-icons:fastapi" style="color: #009688"></iconify-icon><span>FastAPI</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:flask"></iconify-icon><span>Flask</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:angular-icon"></iconify-icon><span>Angular</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:tensorflow"></iconify-icon><span>TensorFlow</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:pytorch-icon"></iconify-icon><span>PyTorch</span></div>
+            <div class="tech-item"><iconify-icon icon="devicon:pandas"></iconify-icon><span>Pandas</span></div>
+            <div class="tech-item"><iconify-icon icon="devicon:numpy"></iconify-icon><span>NumPy</span></div>
+            <div class="tech-item"><iconify-icon icon="devicon:scikitlearn"></iconify-icon><span>Scikit-learn</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:aws"></iconify-icon><span>AWS</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:azure-icon"></iconify-icon><span>Azure</span></div>
+            <div class="tech-item"><iconify-icon icon="simple-icons:snowflake" style="color: #29B5E8"></iconify-icon><span>Snowflake</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:docker-icon"></iconify-icon><span>Docker</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:kubernetes"></iconify-icon><span>Kubernetes</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:postgresql"></iconify-icon><span>PostgreSQL</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:mysql"></iconify-icon><span>MySQL</span></div>
+            <div class="tech-item"><iconify-icon icon="logos:git-icon"></iconify-icon><span>Git</span></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <div
+    class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-700 animate-fade-in animation-delay-600"
+  >
+    {
+      siteConfig.social?.email && (
+        <a
+          href={`mailto:${siteConfig.social.email}`}
+          aria-label="Email"
+          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+            <path d="M3 7l9 6l9 -6" />
+          </svg>
+        </a>
+      )
+    }
+    {
+      siteConfig.social?.linkedin && (
+        <a
+          href={siteConfig.social.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
+          >
+            <>
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M8 11v5" />
+              <path d="M8 8v.01" />
+              <path d="M12 16v-5" />
+              <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+              <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+            </>
+          </svg>
+        </a>
+      )
+    }
+    {
+      siteConfig.social?.github && (
+        <a
+          href={siteConfig.social.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
+          >
+            <>
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+            </>
+          </svg>
+        </a>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  /* Tech Stack Scrolling Animation */
+  .tech-scroll {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  .tech-scroll-content {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 40s linear infinite;
+    width: fit-content;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 80px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .tech-item:hover {
+    opacity: 1;
+  }
+
+  .tech-item iconify-icon {
+    font-size: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .tech-item span {
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Pause animation on hover */
+  .tech-scroll:hover .tech-scroll-content {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 768px) {
+    .tech-item iconify-icon {
+      font-size: 2rem;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .tech-item {
+      min-width: 60px;
+    }
+
+    .tech-scroll-content {
+      gap: 1.5rem;
+    }
+  }
+</style>
