@@ -63,7 +63,7 @@ export const siteConfig = {
       bullets: [
         "Built AI chatbot in Python/FastAPI with Snowflake RAG + OpenAI API, significantly reducing research time for investment staff",
         "Developed AI-driven commentary pipeline automating daily report generation, synthesizing news, research, and portfolio data",
-        "Created C#/Python/React/.NET anomaly detection system on AWS EC2, enabling instant alerts for trading operations",
+        "Created full-stack investor relations platform in React/Python automating chart generation, analysis reports, and ad hoc queries, streamlining all IR workflows for client communications",
       ],
     },
     {
