@@ -1,16 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --lg-bg-color: rgba(31, 41, 55, 0.4);
-  --lg-highlight: rgba(255, 255, 255, 0.2);
+  --lg-bg-color: rgba(31, 41, 55, 0.5);
+  --lg-highlight: rgba(255, 255, 255, 0.25);
   --lg-text: #ffffff;
-  --lg-hover-glow: rgba(255, 255, 255, 0.3);
+  --lg-hover-glow: rgba(255, 255, 255, 0.4);
 }
 
 body {
   font-family: 'IBM Plex Mono', monospace;
-  background-color: #111827;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
   color: #e5e7eb;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ========== GALAXY STARS BACKGROUND ========== */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stars canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* ========== LIQUID GLASS EFFECT ========== */
@@ -41,7 +62,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 0;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px) saturate(180%);
   filter: url(#lg-dist);
   isolation: isolate;
 }
