@@ -1,5 +1,81 @@
 @import "tailwindcss";
 
+:root {
+  --lg-bg-color: rgba(31, 41, 55, 0.4);
+  --lg-highlight: rgba(255, 255, 255, 0.2);
+  --lg-text: #ffffff;
+  --lg-hover-glow: rgba(255, 255, 255, 0.3);
+}
+
 body {
   font-family: 'IBM Plex Mono', monospace;
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+/* ========== LIQUID GLASS EFFECT ========== */
+.glass-container {
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  color: var(--lg-text);
+  background: transparent;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.glass-container--experience,
+.glass-container--education,
+.glass-container--project {
+  width: 100%;
+}
+
+.glass-container:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Glass layers */
+.glass-filter {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  backdrop-filter: blur(10px);
+  filter: url(#lg-dist);
+  isolation: isolate;
+}
+
+.glass-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--lg-bg-color);
+}
+
+.glass-specular {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  overflow: hidden;
+  box-shadow: inset 1px 1px 0 var(--lg-highlight),
+    inset 0 0 5px var(--lg-highlight);
+}
+
+.glass-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 1.5rem;
+}
+
+.glass-content--experience,
+.glass-content--education,
+.glass-content--project {
+  width: 100%;
+  padding: 1.5rem 2rem;
 }
