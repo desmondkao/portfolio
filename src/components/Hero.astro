@@ -4,18 +4,18 @@ import { siteConfig } from "../config";
 
 <div
   id="hero"
-  class="relative isolate overflow-hidden bg-white py-24 md:h-screen"
-  style={`--accent-color: ${siteConfig.accentColor}`}
+  class="relative isolate overflow-hidden py-24 md:h-screen"
+  style={`--accent-color: ${siteConfig.accentColor}; background: transparent;`}
 >
   <!-- Gradient overlay -->
   <div
     class="absolute inset-0 -z-10"
-    style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}40 0%, ${siteConfig.accentColor}25 20%, ${siteConfig.accentColor}10 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, white 100%)`}
+    style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}30 0%, ${siteConfig.accentColor}15 20%, ${siteConfig.accentColor}05 40%, transparent 70%)`}
   >
   </div>
   <svg
     aria-hidden="true"
-    class="absolute inset-0 -z-10 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+    class="absolute inset-0 -z-10 size-full stroke-gray-700 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
   >
     <defs>
       <pattern
@@ -132,95 +132,94 @@ import { siteConfig } from "../config";
   <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
     <div class="w-full">
       <h2
-        class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 animate-fade-in"
+        class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-300 animate-fade-in"
       >
         Hello! 👋
       </h2>
       <h1
-        class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200"
+        class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-100 animate-fade-in animation-delay-200"
       >
         I'm <span style={{ color: siteConfig.accentColor }}
           >{siteConfig.name}</span
         >
       </h1>
       <p
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400"
+        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-400 animate-fade-in animation-delay-400"
       >
         {siteConfig.title}
       </p>
 
-      <!-- Skills Section -->
-      <div class="mt-8 sm:mt-10 md:mt-12 animate-fade-in animation-delay-600">
-        <p class="text-sm sm:text-base font-medium text-gray-500 mb-4 text-left">
+      <!-- Languages Stream - Horizontal -->
+      <div class="mt-12 sm:mt-14 md:mt-16 animate-fade-in animation-delay-600">
+        <p class="text-sm sm:text-base font-medium text-gray-400 mb-4 text-left">
           My skills include
         </p>
+
         <div class="overflow-hidden">
-        <div class="tech-scroll">
-          <div class="tech-scroll-content">
-            <!-- Languages -->
-            <div class="tech-item"><iconify-icon icon="logos:python"></iconify-icon><span>Python</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:javascript"></iconify-icon><span>JavaScript</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:typescript-icon"></iconify-icon><span>TypeScript</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:java"></iconify-icon><span>Java</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:c-plusplus"></iconify-icon><span>C++</span></div>
-            <div class="tech-item"><iconify-icon icon="devicon:csharp"></iconify-icon><span>C#</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:r-lang"></iconify-icon><span>R</span></div>
+          <div class="tech-scroll">
+            <div class="tech-scroll-content">
+              <div class="tech-item"><iconify-icon icon="logos:python"></iconify-icon><span>Python</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:javascript"></iconify-icon><span>JavaScript</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:typescript-icon"></iconify-icon><span>TypeScript</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:java"></iconify-icon><span>Java</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:c-plusplus"></iconify-icon><span>C++</span></div>
+              <div class="tech-item"><iconify-icon icon="devicon:csharp"></iconify-icon><span>C#</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:r-lang"></iconify-icon><span>R</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:postgresql"></iconify-icon><span>PostgreSQL</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:mysql"></iconify-icon><span>MySQL</span></div>
 
-            <!-- Frameworks -->
-            <div class="tech-item"><iconify-icon icon="logos:react"></iconify-icon><span>React</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:nodejs-icon"></iconify-icon><span>Node.js</span></div>
-            <div class="tech-item"><iconify-icon icon="simple-icons:fastapi" style="color: #009688"></iconify-icon><span>FastAPI</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:flask"></iconify-icon><span>Flask</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:angular-icon"></iconify-icon><span>Angular</span></div>
-
-            <!-- AI/ML -->
-            <div class="tech-item"><iconify-icon icon="logos:tensorflow"></iconify-icon><span>TensorFlow</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:pytorch-icon"></iconify-icon><span>PyTorch</span></div>
-            <div class="tech-item"><iconify-icon icon="devicon:pandas"></iconify-icon><span>Pandas</span></div>
-            <div class="tech-item"><iconify-icon icon="devicon:numpy"></iconify-icon><span>NumPy</span></div>
-            <div class="tech-item"><iconify-icon icon="devicon:scikitlearn"></iconify-icon><span>Scikit-learn</span></div>
-
-            <!-- Cloud -->
-            <div class="tech-item"><iconify-icon icon="logos:aws"></iconify-icon><span>AWS</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:azure-icon"></iconify-icon><span>Azure</span></div>
-            <div class="tech-item"><iconify-icon icon="simple-icons:snowflake" style="color: #29B5E8"></iconify-icon><span>Snowflake</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:docker-icon"></iconify-icon><span>Docker</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:kubernetes"></iconify-icon><span>Kubernetes</span></div>
-
-            <!-- Databases & Tools -->
-            <div class="tech-item"><iconify-icon icon="logos:postgresql"></iconify-icon><span>PostgreSQL</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:mysql"></iconify-icon><span>MySQL</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:git-icon"></iconify-icon><span>Git</span></div>
-
-            <!-- Duplicate for seamless loop -->
-            <div class="tech-item"><iconify-icon icon="logos:python"></iconify-icon><span>Python</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:javascript"></iconify-icon><span>JavaScript</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:typescript-icon"></iconify-icon><span>TypeScript</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:java"></iconify-icon><span>Java</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:c-plusplus"></iconify-icon><span>C++</span></div>
-            <div class="tech-item"><iconify-icon icon="devicon:csharp"></iconify-icon><span>C#</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:r-lang"></iconify-icon><span>R</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:react"></iconify-icon><span>React</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:nodejs-icon"></iconify-icon><span>Node.js</span></div>
-            <div class="tech-item"><iconify-icon icon="simple-icons:fastapi" style="color: #009688"></iconify-icon><span>FastAPI</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:flask"></iconify-icon><span>Flask</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:angular-icon"></iconify-icon><span>Angular</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:tensorflow"></iconify-icon><span>TensorFlow</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:pytorch-icon"></iconify-icon><span>PyTorch</span></div>
-            <div class="tech-item"><iconify-icon icon="devicon:pandas"></iconify-icon><span>Pandas</span></div>
-            <div class="tech-item"><iconify-icon icon="devicon:numpy"></iconify-icon><span>NumPy</span></div>
-            <div class="tech-item"><iconify-icon icon="devicon:scikitlearn"></iconify-icon><span>Scikit-learn</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:aws"></iconify-icon><span>AWS</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:azure-icon"></iconify-icon><span>Azure</span></div>
-            <div class="tech-item"><iconify-icon icon="simple-icons:snowflake" style="color: #29B5E8"></iconify-icon><span>Snowflake</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:docker-icon"></iconify-icon><span>Docker</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:kubernetes"></iconify-icon><span>Kubernetes</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:postgresql"></iconify-icon><span>PostgreSQL</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:mysql"></iconify-icon><span>MySQL</span></div>
-            <div class="tech-item"><iconify-icon icon="logos:git-icon"></iconify-icon><span>Git</span></div>
+              <!-- Duplicate for seamless loop -->
+              <div class="tech-item"><iconify-icon icon="logos:python"></iconify-icon><span>Python</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:javascript"></iconify-icon><span>JavaScript</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:typescript-icon"></iconify-icon><span>TypeScript</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:java"></iconify-icon><span>Java</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:c-plusplus"></iconify-icon><span>C++</span></div>
+              <div class="tech-item"><iconify-icon icon="devicon:csharp"></iconify-icon><span>C#</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:r-lang"></iconify-icon><span>R</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:postgresql"></iconify-icon><span>PostgreSQL</span></div>
+              <div class="tech-item"><iconify-icon icon="logos:mysql"></iconify-icon><span>MySQL</span></div>
+            </div>
           </div>
         </div>
-        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vertical Cloud & ML Stream - Right Side -->
+  <div class="absolute left-2/3 top-0 bottom-0 w-32 hidden lg:flex items-center justify-center overflow-hidden">
+    <div class="tech-scroll-vertical h-full">
+      <div class="tech-scroll-vertical-content">
+        <!-- Cloud -->
+        <div class="tech-item-vertical"><iconify-icon icon="logos:aws"></iconify-icon><span>AWS</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:azure-icon"></iconify-icon><span>Azure</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="simple-icons:snowflake" style="color: #29B5E8"></iconify-icon><span>Snowflake</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:docker-icon"></iconify-icon><span>Docker</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:kubernetes"></iconify-icon><span>Kubernetes</span></div>
+
+        <!-- ML/AI -->
+        <div class="tech-item-vertical"><iconify-icon icon="logos:tensorflow"></iconify-icon><span>TensorFlow</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:pytorch-icon"></iconify-icon><span>PyTorch</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="devicon:pandas"></iconify-icon><span>Pandas</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="devicon:numpy"></iconify-icon><span>NumPy</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="devicon:scikitlearn"></iconify-icon><span>Scikit-learn</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:react"></iconify-icon><span>React</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:nodejs-icon"></iconify-icon><span>Node.js</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="simple-icons:fastapi" style="color: #009688"></iconify-icon><span>FastAPI</span></div>
+
+        <!-- Duplicate for seamless loop -->
+        <div class="tech-item-vertical"><iconify-icon icon="logos:aws"></iconify-icon><span>AWS</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:azure-icon"></iconify-icon><span>Azure</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="simple-icons:snowflake" style="color: #29B5E8"></iconify-icon><span>Snowflake</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:docker-icon"></iconify-icon><span>Docker</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:kubernetes"></iconify-icon><span>Kubernetes</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:tensorflow"></iconify-icon><span>TensorFlow</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:pytorch-icon"></iconify-icon><span>PyTorch</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="devicon:pandas"></iconify-icon><span>Pandas</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="devicon:numpy"></iconify-icon><span>NumPy</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="devicon:scikitlearn"></iconify-icon><span>Scikit-learn</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:react"></iconify-icon><span>React</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="logos:nodejs-icon"></iconify-icon><span>Node.js</span></div>
+        <div class="tech-item-vertical"><iconify-icon icon="simple-icons:fastapi" style="color: #009688"></iconify-icon><span>FastAPI</span></div>
       </div>
     </div>
   </div>
@@ -228,7 +227,7 @@ import { siteConfig } from "../config";
   <!-- Load Iconify -->
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <div
-    class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-700 animate-fade-in animation-delay-600"
+    class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-300 animate-fade-in animation-delay-600"
   >
     {
       siteConfig.social?.email && (
@@ -376,7 +375,7 @@ import { siteConfig } from "../config";
 
   .tech-scroll-content {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     animation: scroll 40s linear infinite;
     width: fit-content;
   }
@@ -386,7 +385,7 @@ import { siteConfig } from "../config";
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    min-width: 80px;
+    min-width: 130px;
     opacity: 0.8;
     transition: opacity 0.3s ease;
   }
@@ -396,14 +395,14 @@ import { siteConfig } from "../config";
   }
 
   .tech-item iconify-icon {
-    font-size: 2.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    font-size: 4.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   .tech-item span {
-    font-size: 0.75rem;
-    color: #6b7280;
+    font-size: 1rem;
+    color: #9ca3af;
     font-weight: 500;
     white-space: nowrap;
   }
@@ -422,19 +421,87 @@ import { siteConfig } from "../config";
     animation-play-state: paused;
   }
 
+  /* Vertical Tech Stack Scrolling */
+  .tech-scroll-vertical {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  .tech-scroll-vertical-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    animation: scrollVertical 40s linear infinite;
+    height: fit-content;
+  }
+
+  .tech-item-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .tech-item-vertical:hover {
+    opacity: 1;
+  }
+
+  .tech-item-vertical iconify-icon {
+    font-size: 4.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .tech-item-vertical span {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  @keyframes scrollVertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  /* Pause vertical animation on hover */
+  .tech-scroll-vertical:hover .tech-scroll-vertical-content {
+    animation-play-state: paused;
+  }
+
   @media (max-width: 768px) {
     .tech-item iconify-icon {
-      font-size: 2rem;
-      width: 2rem;
-      height: 2rem;
+      font-size: 3.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
     }
 
     .tech-item {
-      min-width: 60px;
+      min-width: 100px;
     }
 
     .tech-scroll-content {
-      gap: 1.5rem;
+      gap: 2rem;
     }
   }
 </style>
