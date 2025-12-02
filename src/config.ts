@@ -27,7 +27,7 @@ export const siteConfig = {
       skills: ["Python", "FastAPI", "Grok API", "React", "SciPy", "Statistics", "RAG"],
     },
     {
-      name: "AI Research Chatbot",
+      name: "Hedge Fund Data Intelligence Platform",
       description:
         "Built firmwide AI chatbot with Python/FastAPI connecting directly to Snowflake for flexible querying across all company data. Integrated Grok API and PostgreSQL for natural language queries enabling instant access to research reports, market data, and internal documents. Production system serving entire investment staff.",
       link: "",
@@ -44,15 +44,29 @@ export const siteConfig = {
       name: "Cornell AI Hackathon – AI Email Generator",
       description:
         "Created AI-powered email generator using Pinecone vector database and OpenAI API for contextual response generation. Built interactive Streamlit dashboard for real-time email composition with semantic search across email templates, dramatically reducing response time and improving communication quality.",
-      link: "",
+      link: "https://github.com/desmondkao/VectorMail",
       skills: ["Python", "Pinecone", "OpenAI API", "Streamlit", "RAG"],
     },
     {
       name: "Point72 Hackathon – Traffic Forecasting Platform",
       description:
         "Developed hybrid LSTM–ARIMA model for urban traffic forecasting, significantly improving prediction accuracy on large-scale traffic datasets. Built interactive React dashboard visualizing congestion trends as indicators of retail and transport activity. Recognized for innovative time-series modeling and data-driven economic analysis.",
-      link: "",
+      link: "https://github.com/desmondkao/point72_2025",
       skills: ["Python", "TensorFlow", "ARIMA", "React"],
+    },
+    {
+      name: "HP Research @ Yale – Custom Sustainable LLM",
+      description:
+        "Built custom lightweight LLM from scratch using TensorFlow and Keras as part of HP-funded research at Yale. Implemented sustainable AI optimization techniques including model pruning, quantization, and efficient training strategies. Created interactive Streamlit dashboard demonstrating model performance and energy efficiency metrics, showcasing practical approaches to environmentally conscious AI development.",
+      link: "https://github.com/desmondkao/DIYAI.git",
+      skills: ["Python", "TensorFlow", "Keras", "Streamlit", "Model Optimization"],
+    },
+    {
+      name: "ML Stock Price Predictor – Short Seller Analysis",
+      description:
+        "Developed machine learning models predicting stock price movements following short seller report releases. Built feature engineering pipeline extracting signals from report text using NLP and combining with market data. Implemented and compared logistic regression and deep Q-learning (DQL) models for binary classification of post-report price direction, achieving strong predictive performance for trading strategy development.",
+      link: "",
+      skills: ["Python", "Scikit-learn", "Deep Learning", "NLP", "Feature Engineering", "Logistic Regression"],
     },
     {
       name: "Property Distress Prediction Model",
@@ -72,8 +86,15 @@ export const siteConfig = {
       name: "J&J Hackathon – AI Talent Acquisition Dashboard",
       description:
         "Developed talent acquisition dashboard using AI agents and blockchain technology to revolutionize recruiting workflows. Built intelligent matching system and decentralized credential verification for streamlined hiring processes.",
-      link: "",
+      link: "https://github.com/desmondkao/HoneyBee",
       skills: ["Python", "AI Agents", "Blockchain", "React", "NLP"],
+    },
+    {
+      name: "Intra IQ – Enterprise RAG Platform",
+      description:
+        "Built enterprise document intelligence platform using Claude API and RAG architecture for natural language querying across company knowledge bases. Developed secure document ingestion pipeline processing multiple file formats with intelligent chunking and embedding strategies. Created full-stack interface enabling teams to instantly surface insights from internal documentation, reducing information retrieval time and improving organizational knowledge access.",
+      link: "https://github.com/desmondkao/Intra-IQ",
+      skills: ["Python", "Claude API", "RAG", "FastAPI", "React", "Vector DB"],
     },
     {
       name: "NLP Web Scraping API",
