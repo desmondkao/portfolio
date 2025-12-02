@@ -10,7 +10,7 @@ export const siteConfig = {
     github: "https://github.com/desmondkao",
   },
   aboutMe:
-    "I'm a Computer Science and Data Science student at NYU with a passion for building intelligent systems that solve real-world problems. My work spans full-stack development, machine learning, and quantitative finance, where I've delivered solutions that significantly improve efficiency and accuracy. From building AI-powered financial dashboards to developing enterprise data platforms, I thrive at the intersection of engineering and data science. Beyond code, I'm a classical pianist with 16 years of experience and enjoy exploring Muay Thai and music production.",
+    "Originally from San Francisco, I'm now a Computer Science and Data Science student at NYU building AI systems that solve tangible business problems across New York City's financial and tech landscape. I've engineered full-stack platforms and machine learning pipelines for NYC hedge funds, built automated pricing models for real estate companies, and developed NLP tools for academic research centers including NYU's Carter Journalism Institute and Yale. Whether it's automating investment research workflows that process millions of data points daily, or building AI systems that help teams answer complex questions in seconds instead of hours, I love turning messy data challenges into production-ready solutions. Beyond engineering, I'm a classical pianist with 16 years of experience, and I explore creative outlets through Muay Thai and music production.",
   skills: {
     languages: ["Python", "JavaScript", "TypeScript", "SQL", "Java", "C++", "C#", "R", "MATLAB", "HTML/CSS"],
     cloud: ["AWS (EC2, S3, Lambda)", "Azure", "Snowflake", "Firebase", "Docker", "Kubernetes"],
@@ -22,9 +22,65 @@ export const siteConfig = {
     {
       name: "Compass – AI Financial Dashboard",
       description:
-        "Built React + RAG dashboard automating factor report generation for equities team. Developed Snowflake vector DB indexing large-scale financial documents for instant natural-language retrieval. Deployed full-stack app on AWS serving daily users with secure authentication and low-latency queries.",
+        "Built equities-focused AI dashboard with Python/FastAPI integrating Grok API for factor report generation. Developed statistical analysis engine using SciPy for traditional quant metrics and portfolio analytics. Deployed full-stack system combining LLM capabilities with rigorous statistical methods for investment research.",
       link: "",
-      skills: ["Python", "Grok API", "RAG", "Snowflake", "React", "AWS"],
+      skills: ["Python", "FastAPI", "Grok API", "React", "SciPy", "Statistics", "RAG"],
+    },
+    {
+      name: "AI Research Chatbot",
+      description:
+        "Built firmwide AI chatbot with Python/FastAPI connecting directly to Snowflake for flexible querying across all company data. Integrated Grok API and PostgreSQL for natural language queries enabling instant access to research reports, market data, and internal documents. Production system serving entire investment staff.",
+      link: "",
+      skills: ["Python", "FastAPI", "RAG", "Snowflake", "Grok API", "PostgreSQL"],
+    },
+    {
+      name: "Iris – Investor Relations Platform",
+      description:
+        "Developed full-stack investor relations tool for NYC hedge fund connected to Snowflake data warehouse. Built automated data validation pipelines with PostgreSQL backend and report generation system that exports client-ready documents in existing formats, eliminating manual data pulling and validation. One-stop platform for generating all client-facing investment reports.",
+      link: "",
+      skills: ["Python", "React", "Snowflake", "FastAPI", "PostgreSQL", "Data Validation"],
+    },
+    {
+      name: "Cornell AI Hackathon – AI Email Generator",
+      description:
+        "Created AI-powered email generator using Pinecone vector database and OpenAI API for contextual response generation. Built interactive Streamlit dashboard for real-time email composition with semantic search across email templates, dramatically reducing response time and improving communication quality.",
+      link: "",
+      skills: ["Python", "Pinecone", "OpenAI API", "Streamlit", "RAG"],
+    },
+    {
+      name: "Point72 Hackathon – Traffic Forecasting Platform",
+      description:
+        "Developed hybrid LSTM–ARIMA model for urban traffic forecasting, significantly improving prediction accuracy on large-scale traffic datasets. Built interactive React dashboard visualizing congestion trends as indicators of retail and transport activity. Recognized for innovative time-series modeling and data-driven economic analysis.",
+      link: "",
+      skills: ["Python", "TensorFlow", "ARIMA", "React"],
+    },
+    {
+      name: "Property Distress Prediction Model",
+      description:
+        "Built logistic regression model predicting property distress for real estate portfolio management. Developed automated pipeline processing and scoring properties daily with strong predictive accuracy, enabling proactive risk assessment and investment decisions.",
+      link: "",
+      skills: ["Python", "Scikit-learn", "Logistic Regression", "Feature Engineering"],
+    },
+    {
+      name: "2Fish – AI Psychoanalysis App",
+      description:
+        "Published cross-platform app on App Store for AI-driven dream interpretation and journaling. Implemented Firebase encrypted backend for secure psychoanalytic data and user insights. Architected unified Express/SwiftUI design using TCA patterns for scalable feature delivery.",
+      link: "https://2fish.app",
+      skills: ["Swift", "JavaScript", "Express", "Firebase", "React", "SwiftUI"],
+    },
+    {
+      name: "J&J Hackathon – AI Talent Acquisition Dashboard",
+      description:
+        "Developed talent acquisition dashboard using AI agents and blockchain technology to revolutionize recruiting workflows. Built intelligent matching system and decentralized credential verification for streamlined hiring processes.",
+      link: "",
+      skills: ["Python", "AI Agents", "Blockchain", "React", "NLP"],
+    },
+    {
+      name: "NLP Web Scraping API",
+      description:
+        "Built NLP API for extracting structured data from unstructured sources using Gemini and Claude APIs. Developed automated web scraping pipeline with intelligent feature extraction and validation, transforming raw web data into clean, actionable datasets. Containerized with Docker for scalable deployment.",
+      link: "",
+      skills: ["Python", "Gemini API", "Claude API", "NLP", "Web Scraping", "FastAPI", "Docker"],
     },
     {
       name: "DataLens – Enterprise Data Quality Dashboard",
@@ -33,78 +89,62 @@ export const siteConfig = {
       link: "",
       skills: ["Python", "SQL", "PySpark", "PowerBI", "Azure"],
     },
-    {
-      name: "Traffixplorer – Traffic Forecasting Platform",
-      description:
-        "Developed hybrid LSTM–ARIMA model for urban traffic forecasting, significantly improving prediction accuracy on large-scale traffic datasets. Built interactive React dashboard visualizing congestion trends as indicators of retail and transport activity. Recognized by Point72 Hackathon for innovative time-series modeling and data-driven economic analysis.",
-      link: "",
-      skills: ["Python", "TensorFlow", "ARIMA", "React"],
-    },
-    {
-      name: "Full-Stack Psychoanalysis App",
-      description:
-        "Published cross-platform app on App Store for AI-driven dream interpretation and journaling. Implemented Firebase encrypted backend for secure psychoanalytic data and user insights. Architected unified Express/SwiftUI design using TCA patterns for scalable feature delivery.",
-      link: "",
-      skills: ["Swift", "JavaScript", "Express", "Firebase", "React", "SwiftUI"],
-    },
-    {
-      name: "AI Email Generator",
-      description:
-        "Created Chrome extension generating contextual replies via Pinecone RAG, dramatically reducing email response time. Built embedding pipeline in Python processing large template libraries with high semantic relevance. Deployed extension with CI/CD updates and privacy-safe local caching.",
-      link: "",
-      skills: ["Python", "TypeScript", "Pinecone", "RAG", "Chrome APIs"],
-    },
   ],
   experience: [
     {
       company: "AlphaQuest",
-      title: "Software Engineering Intern (Full-Stack & LLM Apps)",
+      title: "Software & AI Engineering Intern",
       dateRange: "June 2025 - Present",
       bullets: [
         "Built AI chatbot in Python/FastAPI with Snowflake RAG + OpenAI API, significantly reducing research time for investment staff",
         "Developed AI-driven commentary pipeline automating daily report generation, synthesizing news, research, and portfolio data",
         "Created full-stack investor relations platform in React/Python automating chart generation, analysis reports, and ad hoc queries, streamlining all IR workflows for client communications",
       ],
+      technologies: ["Python", "FastAPI", "React", "Snowflake", "OpenAI API", "RAG"],
     },
     {
       company: "Catenary Alternatives Asset Management",
-      title: "Software Engineering Intern (Data Platforms)",
+      title: "Software & Data Engineering Intern",
       dateRange: "Dec 2024 - May 2025",
       bullets: [
         "Developed firmwide Flask/SQL research API enabling teams to query live data with dramatically improved retrieval speeds",
         "Built autonomous LLM scraping pipeline in Flask/Azure with daily data collection, significantly reducing research time",
         "Created AI Excel assistant in Python using Perplexity + Tavily APIs, automating large-scale data entry tasks",
       ],
+      technologies: ["Python", "Flask", "SQL", "Azure", "NLP"],
     },
     {
       company: "Neue Urban",
-      title: "Data / ML Engineering Intern",
+      title: "ML & Data Engineering Intern",
       dateRange: "Nov 2024 - Feb 2025",
       bullets: [
         "Developed ML valuation API in Python, significantly improving property pricing accuracy and reducing appraisal costs",
         "Automated end-to-end valuation pipeline from data ingestion to prediction, dramatically reducing review time",
         "Integrated live market/listing APIs to enrich model features, improving valuation precision across portfolios",
       ],
+      technologies: ["Python", "Scikit-learn", "FastAPI", "Machine Learning"],
     },
     {
       company: "Arthur L. Carter Journalism Institute",
-      title: "Research Assistant",
+      title: "AI Research Engineering Intern",
       dateRange: "Nov 2024 - Mar 2025",
       bullets: [
         "Built LLM/NLP pipeline in Python/HuggingFace analyzing large-scale social media posts for sentiment trends",
         "Developed large-scale document scraper with LLM-based summarization, significantly reducing publication review time",
         "Created automated bias detection system in Python evaluating news articles for neutrality and language framing",
       ],
+      technologies: ["Python", "NLP", "HuggingFace", "Web Scraping"],
     },
     {
       company: "Yale University (HP Funded Research)",
-      title: "Machine Learning Engineering Intern",
+      title: "ML Engineering Intern",
       dateRange: "June 2024 - July 2024",
       bullets: [
         "Built lightweight LLM with TensorFlow/Keras, using pruning and quantization for low-power on-device inference",
         "Benchmarked model latency and power consumption across CPU/GPU setups, optimizing for sustainable local deployment",
         "Led ML/AI sustainability workshop for industry professionals, sharing practical techniques for efficient model design",
       ],
+      technologies: ["Python", "TensorFlow", "Keras", "Machine Learning"],
     },
   ],
   education: [

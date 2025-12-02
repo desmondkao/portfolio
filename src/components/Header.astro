@@ -10,16 +10,25 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
   id="header"
   class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
 >
+  <a
+    href={`mailto:${siteConfig.social.email}`}
+    class="absolute top-4 left-8 flex items-center gap-2 text-sm text-gray-400 hover:text-gray-100 transition-colors font-medium whitespace-nowrap z-10"
+  >
+    <span>Reach me at</span>
+    <span class="font-mono text-gray-300">{siteConfig.social.email}</span>
+  </a>
+
   <nav class="max-w-7xl mx-auto px-8 py-4">
-    <ul class="flex items-center gap-8 justify-center">
-      <li>
-        <a
-          href="#about"
-          class="text-gray-300 hover:text-white transition-colors font-medium"
-        >
-          About
-        </a>
-      </li>
+    <div class="flex items-center justify-center w-full">
+      <ul class="flex items-center gap-8">
+        <li>
+          <a
+            href="#about"
+            class="text-gray-300 hover:text-white transition-colors font-medium"
+          >
+            About
+          </a>
+        </li>
       {
         hasProjects && (
           <li>
@@ -56,7 +65,8 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
           </li>
         )
       }
-    </ul>
+      </ul>
+    </div>
   </nav>
 </header>
 

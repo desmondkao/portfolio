@@ -26,19 +26,40 @@ import "../styles/global.css";
     <title>{siteConfig.name} - {siteConfig.title}</title>
   </head>
   <body>
+    <!-- SVG Filter for Liquid Glass Distortion -->
+    <svg style="display: none">
+      <filter id="lg-dist" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.008 0.008"
+          numOctaves="2"
+          seed="92"
+          result="noise"
+        />
+        <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="blurred"
+          scale="70"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        />
+      </filter>
+    </svg>
+
     <div class="stars" id="stars"></div>
-    <Header />
-    <section style="position: relative; z-index: 1;">
+    <div style="position: relative; z-index: 1;">
+      <Header />
       <Hero />
       <About />
       <Projects />
       <Experience />
       <Education />
-    </section>
+    </div>
     <Footer />
 
     <script>
-      // Galaxy Stars Background
+      // Galaxy Stars Background with Comets
       const canvas = document.createElement('canvas');
       const starsContainer = document.getElementById('stars');
       if (starsContainer) {
@@ -50,72 +71,182 @@ import "../styles/global.css";
         canvas.width = width;
         canvas.height = height;
 
-        // Star particles
-        const stars: Array<{x: number, y: number, radius: number, vx: number, vy: number, opacity: number, pulse: number, pulseSpeed: number}> = [];
-        const numStars = 400;
+        // More stars, smaller
+        const stars: Array<{x: number, y: number, radius: number, opacity: number}> = [];
+        const numStars = 1500;
 
         // Create stars
         for (let i = 0; i < numStars; i++) {
           stars.push({
             x: Math.random() * width,
             y: Math.random() * height,
-            radius: Math.random() * 1.5 + 0.5,
-            vx: (Math.random() - 0.5) * 0.2,
-            vy: (Math.random() - 0.5) * 0.2,
-            opacity: Math.random(),
-            pulse: Math.random() * Math.PI * 2,
-            pulseSpeed: Math.random() * 0.02 + 0.01
+            radius: Math.random() * 0.6 + 0.1,
+            opacity: Math.random() * 0.5 + 0.2
           });
+        }
+
+        // Comets/shooting stars
+        type Comet = {x: number, y: number, length: number, angle: number, speed: number, opacity: number, active: boolean};
+        const comets: Comet[] = [];
+        const maxComets = 5;
+        let lastCometTime = 0;
+        let lastMeteorShower = 0;
+
+        function createComet() {
+          if (comets.filter(c => c.active).length >= maxComets) return;
+
+          // Random starting position from any edge
+          const edge = Math.floor(Math.random() * 4);
+          let x, y, angle;
+
+          switch(edge) {
+            case 0: // Top
+              x = Math.random() * width;
+              y = -10;
+              angle = Math.random() * Math.PI / 2 + Math.PI / 4; // 45-135 degrees (downward)
+              break;
+            case 1: // Right
+              x = width + 10;
+              y = Math.random() * height;
+              angle = Math.random() * Math.PI / 2 + Math.PI; // 180-270 degrees (leftward)
+              break;
+            case 2: // Left
+              x = -10;
+              y = Math.random() * height;
+              angle = Math.random() * Math.PI / 2; // 0-90 degrees (rightward)
+              break;
+            default: // Top-right diagonal (classic shooting star)
+              x = Math.random() * width;
+              y = -10;
+              angle = Math.random() * Math.PI / 6 + Math.PI / 3; // 60-90 degrees
+              break;
+          }
+
+          comets.push({
+            x,
+            y,
+            length: Math.random() * 60 + 40,
+            angle,
+            speed: Math.random() * 4 + 3,
+            opacity: 1,
+            active: true
+          });
+        }
+
+        function createMeteorShower() {
+          const numMeteors = Math.floor(Math.random() * 8) + 5; // 5-12 meteors
+          for (let i = 0; i < numMeteors; i++) {
+            setTimeout(() => {
+              const x = Math.random() * width;
+              const y = -10 - Math.random() * 100;
+              const angle = Math.random() * Math.PI / 6 + Math.PI / 3;
+              comets.push({
+                x,
+                y,
+                length: Math.random() * 80 + 60,
+                angle,
+                speed: Math.random() * 5 + 4,
+                opacity: 1,
+                active: true
+              });
+            }, i * 200);
+          }
         }
 
         function drawStars() {
           if (!ctx) return;
           ctx.clearRect(0, 0, width, height);
 
+          // Draw stationary stars
           stars.forEach((star) => {
-            // Update position
-            star.x += star.vx;
-            star.y += star.vy;
-
-            // Wrap around screen
-            if (star.x < 0) star.x = width;
-            if (star.x > width) star.x = 0;
-            if (star.y < 0) star.y = height;
-            if (star.y > height) star.y = 0;
-
-            // Update pulse
-            star.pulse += star.pulseSpeed;
-            const pulseOpacity = (Math.sin(star.pulse) + 1) / 2;
-
-            // Draw star
             ctx.beginPath();
             ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity * pulseOpacity * 0.8})`;
+            ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
             ctx.fill();
-
-            // Add glow for larger stars
-            if (star.radius > 1) {
-              ctx.beginPath();
-              ctx.arc(star.x, star.y, star.radius * 2, 0, Math.PI * 2);
-              const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.radius * 2);
-              gradient.addColorStop(0, `rgba(173, 216, 255, ${pulseOpacity * 0.3})`);
-              gradient.addColorStop(1, 'rgba(173, 216, 255, 0)');
-              ctx.fillStyle = gradient;
-              ctx.fill();
-            }
           });
 
-          requestAnimationFrame(drawStars);
+          // Draw and update comets
+          const now = Date.now();
+
+          // Regular comets (more frequent)
+          if (now - lastCometTime > 1500 && Math.random() < 0.05) {
+            createComet();
+            lastCometTime = now;
+          }
+
+          // Meteor shower (rare)
+          if (now - lastMeteorShower > 20000 && Math.random() < 0.01) {
+            createMeteorShower();
+            lastMeteorShower = now;
+          }
+
+          comets.forEach((comet) => {
+            if (!comet.active) return;
+
+            // Update position
+            comet.x += Math.cos(comet.angle) * comet.speed;
+            comet.y += Math.sin(comet.angle) * comet.speed;
+            comet.opacity -= 0.01;
+
+            // Deactivate if off screen or faded
+            if (comet.y > height + 10 || comet.x > width + 10 || comet.x < -10 || comet.y < -10 || comet.opacity <= 0) {
+              comet.active = false;
+              return;
+            }
+
+            // Draw comet trail
+            const gradient = ctx.createLinearGradient(
+              comet.x,
+              comet.y,
+              comet.x - Math.cos(comet.angle) * comet.length,
+              comet.y - Math.sin(comet.angle) * comet.length
+            );
+            gradient.addColorStop(0, `rgba(255, 255, 255, ${comet.opacity})`);
+            gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+
+            ctx.beginPath();
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = 2;
+            ctx.moveTo(comet.x, comet.y);
+            ctx.lineTo(
+              comet.x - Math.cos(comet.angle) * comet.length,
+              comet.y - Math.sin(comet.angle) * comet.length
+            );
+            ctx.stroke();
+          });
+
+          // Only animate if there are active comets
+          if (comets.some(c => c.active)) {
+            requestAnimationFrame(drawStars);
+          }
         }
 
         drawStars();
+        // Start animation loop for comets
+        setInterval(() => {
+          if (!comets.some(c => c.active)) {
+            drawStars();
+          }
+        }, 100);
 
-        // Handle resize
+        // Redraw on resize
         window.addEventListener('resize', () => {
           width = window.innerWidth;
           height = window.innerHeight;
           canvas.width = width;
           canvas.height = height;
+
+          // Recreate stars for new dimensions
+          stars.length = 0;
+          for (let i = 0; i < numStars; i++) {
+            stars.push({
+              x: Math.random() * width,
+              y: Math.random() * height,
+              radius: Math.random() * 0.6 + 0.1,
+              opacity: Math.random() * 0.5 + 0.2
+            });
+          }
+          drawStars();
         });
       }
     </script>

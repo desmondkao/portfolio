@@ -9,6 +9,14 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
       <div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div class="lg:col-span-4">
+            <div class="flex items-center gap-4 mb-4">
+              <img
+                src={`${import.meta.env.BASE_URL}nyulogo.png`}
+                alt="NYU Logo"
+                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
             <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-100">
               Education
             </h2>

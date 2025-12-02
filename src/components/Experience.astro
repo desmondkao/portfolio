@@ -1,6 +1,39 @@
 ---
 import { siteConfig } from "../config";
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
+
+// Technology icon mapping
+const techIcons: Record<string, string> = {
+  "Python": "logos:python",
+  "JavaScript": "logos:javascript",
+  "TypeScript": "logos:typescript-icon",
+  "FastAPI": "simple-icons:fastapi",
+  "Flask": "skill-icons:flask-light",
+  "RAG": "mdi:brain",
+  "Snowflake": "simple-icons:snowflake",
+  "OpenAI API": "simple-icons:openai",
+  "React": "logos:react",
+  "SQL": "vscode-icons:file-type-sql",
+  "Azure": "logos:azure-icon",
+  "NLP": "mdi:text-search",
+  "Scikit-learn": "devicon:scikitlearn",
+  "Machine Learning": "mdi:brain",
+  "Web Scraping": "mdi:web",
+  "HuggingFace": "simple-icons:huggingface",
+  "TensorFlow": "logos:tensorflow",
+  "Keras": "simple-icons:keras",
+};
+
+function getTechIcon(tech: string): string {
+  return techIcons[tech] || "mdi:code-braces";
+}
+
+// Technologies to display as text badges instead of icons
+const textBadgeTechs = ["Machine Learning", "Web Scraping"];
+
+function shouldShowAsTextBadge(tech: string): boolean {
+  return textBadgeTechs.includes(tech);
+}
 ---
 
 {
@@ -66,6 +99,28 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
                           </li>
                         ))}
                       </ul>
+
+                      {exp.technologies && exp.technologies.length > 0 && (
+                        <div class="flex flex-wrap items-center gap-2 sm:gap-3 pt-4 mt-4 border-t border-gray-700">
+                          {exp.technologies.map((tech) =>
+                            shouldShowAsTextBadge(tech) ? (
+                              <span class="px-3 py-1.5 bg-gray-700/50 border border-gray-600 text-gray-300 rounded-full text-xs font-medium">
+                                {tech}
+                              </span>
+                            ) : (
+                              <div class="flex flex-col items-center gap-1 opacity-80 hover:opacity-100 transition-opacity duration-200">
+                                <div class="h-9 sm:h-10 flex items-center justify-center">
+                                  <iconify-icon
+                                    icon={getTechIcon(tech)}
+                                    class="text-3xl sm:text-4xl"
+                                  ></iconify-icon>
+                                </div>
+                                <span class="text-xs text-gray-400">{tech}</span>
+                              </div>
+                            )
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -77,12 +132,3 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
     </section>
   )
 }
-
-<!-- SVG FILTER DEFINITION FOR LIQUID GLASS -->
-<svg style="display: none">
-  <filter id="lg-dist" x="0%" y="0%" width="100%" height="100%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.008 0.008" numOctaves="2" seed="92" result="noise" />
-    <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
-    <feDisplacementMap in="SourceGraphic" in2="blurred" scale="70" xChannelSelector="R" yChannelSelector="G" />
-  </filter>
-</svg>
