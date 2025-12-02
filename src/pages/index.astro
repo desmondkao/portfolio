@@ -88,7 +88,7 @@ import "../styles/global.css";
         // Comets/shooting stars
         type Comet = {x: number, y: number, length: number, angle: number, speed: number, opacity: number, active: boolean};
         const comets: Comet[] = [];
-        const maxComets = 5;
+        const maxComets = 10;
         let lastCometTime = 0;
         let lastMeteorShower = 0;
 
@@ -127,7 +127,7 @@ import "../styles/global.css";
             y,
             length: Math.random() * 60 + 40,
             angle,
-            speed: Math.random() * 4 + 3,
+            speed: Math.random() * 3 + 2,
             opacity: 1,
             active: true
           });
@@ -145,7 +145,7 @@ import "../styles/global.css";
                 y,
                 length: Math.random() * 80 + 60,
                 angle,
-                speed: Math.random() * 5 + 4,
+                speed: Math.random() * 4 + 3,
                 opacity: 1,
                 active: true
               });
@@ -169,7 +169,7 @@ import "../styles/global.css";
           const now = Date.now();
 
           // Regular comets (more frequent)
-          if (now - lastCometTime > 1500 && Math.random() < 0.05) {
+          if (now - lastCometTime > 1000 && Math.random() < 0.1) {
             createComet();
             lastCometTime = now;
           }
